@@ -1,6 +1,5 @@
-import { format } from 'date-fns';
+import moment from 'moment';
 
-export const getCurrentTimestamp = () => {
-    const currentDate = new Date();
-    return format(currentDate, 'yyyy-MM-dd HH:mm');
+export const formatTimestamp = (updated_at: any) => {
+    return moment(updated_at).format('YYYY-MM-DD HH:mm');
 };

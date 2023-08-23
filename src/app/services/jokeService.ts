@@ -11,5 +11,9 @@ export const getJokeByDefault = async () => {
 };
 
 export const getJokeByCategory = async (category: string) => {
-    return await axios.get(`${API_BASE_URL}/${category}`);
+    return await axios.post(`${API_BASE_URL}/category`, { category_value: category });
+};
+
+export const getJokesByFreeText = async (freetext: string) => {
+    return await axios.post(`${API_BASE_URL}/freetext`, { freetext_value: freetext });
 };

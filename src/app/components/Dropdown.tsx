@@ -24,6 +24,7 @@ const Dropdown: React.FC<IDropdown> = ({
 
   const handleSelect = (e: any) => {
     setValue(e.target.dataset.value);
+    setIsOpen(false);
   }
 
   const handleOutsideClick = (e: MouseEvent) => {
@@ -59,6 +60,14 @@ const Dropdown: React.FC<IDropdown> = ({
       {isOpen && (
         <div className="absolute right-0 mt-2 w-full lg:w-48 bg-white border border-gray-300 rounded-md shadow-lg">
           <ul className="py-1">
+            <li
+              key={0}
+              data-value={""}
+              className="px-4 py-2 cursor-pointer hover:bg-gray-100"
+              onClick={handleSelect}
+            >
+              {"Select a category..."}
+            </li>
             {options?.map((option, index) => (
               <li
                 key={index}
